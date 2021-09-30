@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Team</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+</head>
+<body class="home">
+<nav class="nav_display">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/addTeam}">Add Team</a>
+    <a th:href="@{/editTeam}">Edit Team</a>
+    <a th:href="@{/deleteTeam}">Delete Team</a>
+    <a th:href="@{/displayResults}">Display Team</a>
+</nav>
+<table width="50%">
+    <tr class="tableheader">
+        <th>Team Name</th>
+        <th>Continent</th>
+        <th>Games Played</th>
+        <th>Games Won</th>
+        <th>Games Drawn</th>
+        <th>Games Lost</th>
+        <th>Points</th>
+    </tr>
+
+    <th:block th:each="t:${displayTeams}">
+        <tr>
+            <td th:text="${t.teamName}"></td>
+            <td th:text="${t.teamContinent}"></td>
+            <td th:text="${t.gamesPlayed}"></td>
+            <td th:text="${t.gamesWon}"></td>
+            <td th:text="${t.gamesDrawn}"></td>
+            <td th:text="${t.gamesLost}"></td>
+            <td th:text="${t.gamesWon * 3 + t.gamesDrawn}"></td>
+            <td><a th:href="@{'updateTeamById/'+${t.teamId}}">Edit Team</a></td>
+        </tr>
+    </th:block>
+</table>
+<form method="get" th:action="@{/editSearch}">
+    <input type="text" name="search">
+    <button type="submit">Search Team</button>
+</form>
+<footer class="mainfooter">© 2021 by Haashim Chouhdry All rights reserved.</footer>
+</body>
+</html>

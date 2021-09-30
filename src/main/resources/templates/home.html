@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+</head>
+<body class="home">
+<nav class="nav_display">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/addTeam}">Add Team</a>
+    <a th:href="@{/editTeam}">Edit Team</a>
+    <a th:href="@{/deleteTeam}">Delete Team</a>
+    <a th:href="@{/displayResults}">Display Team</a>
+</nav>
+<h1 class="homeheader">Welcome to Fifa 2018!</h1>
+<footer class="homefooter">© 2021 by Haashim Chouhdry All rights reserved.</footer>
+</body>
+</html>

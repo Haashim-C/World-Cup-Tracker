@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Team</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+</head>
+<body class="home">
+<nav class="nav_display">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/addTeam}">Add Team</a>
+    <a th:href="@{/editTeam}">Edit Team</a>
+    <a th:href="@{/deleteTeam}">Delete Team</a>
+    <a th:href="@{/displayResults}">Display Team</a>
+</nav>
+<form method="post" th:action="@{/insertTeam}" th:object="${team}" class="addform">
+    <input type="hidden" th:field="*{teamId}">
+    Team Name: <input type="text" th:field="*{teamName}" required><br>
+    Team Continent: <select th:field="*{teamContinent}">
+    <option th:value="Africa">Africa</option>
+    <option th:value="Asia">Asia</option>
+    <option th:value="Antarctica">Antarctica</option>
+    <option th:value="SouthAmerica">South America</option>
+    <option th:value="NorthAmerica">North America</option>
+    <option th:value="Europe">Europe</option>
+    <option th:value="Oceania">Oceania</option>
+</select><br>
+    Number of Games Played: <input type="number" th:field="*{gamesPlayed}" min="0"><br>
+    Number of Games Won: <input type="number" th:field="*{gamesWon}" min="0"><br>
+    Number of Games Drawn: <input type="number" th:field="*{gamesDrawn}" min="0"><br>
+    Number of Games Lost: <input type="number" th:field="*{gamesLost}" min="0"><br>
+
+    <input type="submit" value="Add Team">
+</form>
+<footer class="mainfooter">© 2021 by Haashim Chouhdry All rights reserved.</footer>
+</body>
+</html>

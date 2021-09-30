@@ -1,0 +1,60 @@
+footer.homefooter{
+    position:fixed;
+    text-align: center;
+    width:100%;
+    bottom: 0;
+    font-size:20px;
+    color: white;
+}
+
+footer.mainfooter{
+    position:fixed;
+    text-align: center;
+    width:100%;
+    bottom: 0;
+    font-size:20px;
+    color: black;
+}
+
+tr:nth-child(even){
+    background-color: #caca16;
+    color: black;
+    text-align: center;
+}
+
+tr:nth-child(odd){
+    background-color: greenyellow;
+    color: black;
+    text-align: center;
+}
+
+tr.tableheader{
+    background-color: #FEC310
+}
+
+body.home{
+    background: url("fifatrophy.jpg") no-repeat fixed center;
+    background-size: 100% 100%;
+}
+
+nav.nav_display{
+    background-color: #caca16;
+    margin: auto;
+    background-size: auto;
+    color: green;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1.homeheader{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    align-content: center;
+}
+
+form.addform{
+    color: white;
+}

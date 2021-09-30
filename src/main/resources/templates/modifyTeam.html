@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Modify Team</title>
+</head>
+<body>
+<form method="post" th:action="@{/modifyTeam}" th:object="${team}">
+    <input type="hidden" th:field="*{teamId}">
+    Team Name: <input type="text" th:field="*{teamName}" required><br>
+    Team Continent: <select th:field="*{teamContinent}">
+    <option th:value="Africa">Africa</option>
+    <option th:value="Asia">Asia</option>
+    <option th:value="Antarctica">Antarctica</option>
+    <option th:value="SouthAmerica">South America</option>
+    <option th:value="NorthAmerica">North America</option>
+    <option th:value="Europe">Europe</option>
+    <option th:value="Oceania">Oceania</option>
+</select><br>
+    # of Games Played: <input type="number" th:field="*{gamesPlayed}" min="0"><br>
+    # of Games Won: <input type="number" th:field="*{gamesWon}" min="0"><br>
+    # of Games Drawn: <input type="number" th:field="*{gamesDrawn}" min="0"><br>
+    # of Games Lost: <input type="number" th:field="*{gamesLost}" min="0"><br>
+
+    <input type="submit" value="Add Team">
+</form>
+</body>
+</html>
